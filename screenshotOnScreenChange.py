@@ -9,17 +9,16 @@ imageNum = 1  ## used to serialize image by order of time in each session
 experimentSessionStart = time() ## Each Game has different sessionstart time
 
 def save_image():
-        global imageNum
+        global imageNum, experimentSessionStart
         grab = PIL.ImageGrab.grab()
         grab.save(r"C:\Users\Summer2018\Documents\Image_{0}_{1}.png".format(experimentSessionStart, imageNum))
         print("Saved img num:", imageNum)
         imageNum += 1
 
 def start_new_session():
-        global experimentSessionStart
-        global imageNum
+        global experimentSessionStart, imageNum
         print("New session")
-        experimentSesssionStart = time()
+        experimentSessionStart = time()
         imageNum = 1
 
 root = tk.Tk()
